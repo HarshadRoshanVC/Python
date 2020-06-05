@@ -1,0 +1,14 @@
+period = int(input())
+longitude=float(input())
+longitude=float("{:.2f}".format(longitude))
+time=(period/360)*longitude
+hour=int(time)
+minute=int((time-hour)*60);
+#minute=float("{:.2f}".format(minute))
+hourAngle=0.5 * (hour * 60 + minute);
+minuteAngle=6*minute;
+angle = abs(hourAngle - minuteAngle);  
+  
+
+angle = min(360 - angle, angle);  
+print("%.2f" % angle)
